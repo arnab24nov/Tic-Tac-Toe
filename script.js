@@ -42,6 +42,13 @@ for (let i = 0; i < box.length; i++) {
 const checkResult = () => {
   if (result.innerHTML !== "") {
     cube.classList.add("disabledDiv");
+
+    if (circle1.classList.contains("chngBackground")) {
+      circle1.classList.remove("chngBackground");
+    }
+    if (circle2.classList.contains("chngBackground")) {
+      circle2.classList.remove("chngBackground");
+    }
   }
 };
 /* possibilities to win */
@@ -140,6 +147,7 @@ const getwinner = () => {
   ) {
     result.innerHTML = `Match Draw`;
   }
+
   checkResult();
 };
 
@@ -158,9 +166,5 @@ myBtn.addEventListener("click", () => {
   }
   chosenItem = 0;
   cube.classList.remove("disabledDiv");
-
-  if (circle2.classList.contains("chngBackground")) {
-    circle2.classList.remove("chngBackground");
-  }
   circle1.classList.add("chngBackground");
 });
